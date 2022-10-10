@@ -1,0 +1,62 @@
+﻿<Page x:Class="ApplicationForTesting.Pages.PageOrder"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ApplicationForTesting.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="800"
+      Title="PageOrder" Background="White">
+
+    <Grid>
+        <!--Модифицируйте задачу «Заказ в Макдональдсе». Добавьте возможность указать не только
+        блюдо, но и количество порций. У каждого блюда есть цена. По умолчанию, если блюдо
+        выбрано, количество становится равным 1. В чеке должна быть отображена следующая
+        информация: блюдо, количество, итоговая стоимость блюда каждого типа и суммарная
+        стоимость заказа.-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.7*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="2.5*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,50,0">
+                    <CheckBox Content="Чизбургер" Width="120" FontSize="15" Margin="3" Name="CbxCheeseBurger" Click="CbxCheeseBurger_Click"/>
+                    <TextBox Text="0" Width="20" Height="20" Name="txtCheese"/>
+                    <TextBlock Text="3$" FontSize="15" Margin="20,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <CheckBox Content="Гамбургер" Width="120" FontSize="15" Margin="3" Name="CbxHamBurger" Click="CbxHamBurger_Click"/>
+                    <TextBox Text="0" Width="20" Height="20" Name="txtHam"/>
+                    <TextBlock Text="4$" FontSize="15" Margin="20,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,50,0" >
+                    <CheckBox Content="Кока-кола" Width="120" FontSize="15" Margin="3" Name="CbxCola" Click="CbxCola_Click"/>
+                    <TextBox Text="0" Width="20" Height="20" Name="txtCola"/>
+                    <TextBlock Text="1$" FontSize="15" Margin="20,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <CheckBox Content="Нагетсы" Width="120" FontSize="15" Margin="3" Name="CbxNuggets" Click="CbxNuggets_Click"/>
+                    <TextBox Text="0" Width="20" Height="20" Name="txtNuggets"/>
+                    <TextBlock Text="2$" FontSize="15" Margin="20,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <Button Width="140" Height="35" FontSize="16" Grid.Row="1" HorizontalAlignment="Center" Content="Заказать" Name="btnOrder" Click="btnOrder_Click" VerticalAlignment="Bottom" Margin="0,0,15,0" />
+        <StackPanel HorizontalAlignment="Center" Grid.Row="2" Margin="0,10,0,0" >
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Наименование" Margin="10, 0, 0, 0"/>
+                <TextBlock Text="Кол-во" Margin="27.5, 0, 0, 0"/>
+                <TextBlock Text="Цена" Margin="73, 0, 0, 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <ListBox Width="110" Height="200" Margin="0,0,0,10" Name="Check"/>
+                <ListBox Width="110" Height="200" Margin="0,0,0,10" Name="Check2"/>
+                <ListBox Width="110" Height="200" Margin="0,0,0,10" Name="Check3"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
